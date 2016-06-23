@@ -12,7 +12,7 @@ public class Main extends JFrame{
 	
 	public Main(){
 		super("Exercícios");
-		linha = new LinhaBezier();
+		linha = new LinhaBezier(WIDTH,HEIGHT);
 		setSize(WIDTH,HEIGHT);
 		setResizable(false);
 		add(linha);

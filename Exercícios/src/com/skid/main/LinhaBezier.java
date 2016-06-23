@@ -1,6 +1,7 @@
 package com.skid.main;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.util.concurrent.ExecutorService;
@@ -14,10 +15,13 @@ public class LinhaBezier extends Canvas implements Runnable{
 	private static final long serialVersionUID = 1L;
 	private ExecutorService es;
 	private boolean running;
+	private int w, h;
 	
 	
-	public LinhaBezier(){
+	public LinhaBezier(int width, int height){
 		es = Executors.newFixedThreadPool(1);
+		w = width;
+		h = height;
 	}
 
 	@Override
@@ -56,7 +60,8 @@ public class LinhaBezier extends Canvas implements Runnable{
 		
 		Graphics g = bs.getDrawGraphics();
 		////////////////////////////////////
-		
+		g.setColor(Color.DARK_GRAY);
+		g.fillRect(0, 0, w, h);
 		
 		////////////////////////////////////
 		g.dispose();
